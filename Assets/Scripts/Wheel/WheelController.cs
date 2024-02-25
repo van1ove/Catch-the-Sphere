@@ -1,4 +1,3 @@
-using Score;
 using UnityEngine;
 
 namespace Wheel
@@ -28,7 +27,6 @@ namespace Wheel
         private void ChangeSpinDirection()
         {
             _axis = _axis == Vector3.back ? Vector3.forward : Vector3.back;
-            ScoreController.SetNewScore.Invoke();
         }
         #endregion
     }

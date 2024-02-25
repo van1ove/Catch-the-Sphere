@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Score;
+using UnityEngine;
+using Sphere;
 
 namespace Wheel
 {
@@ -7,10 +9,10 @@ namespace Wheel
     {
         private void OnTriggerEnter2D(Collider2D col)
         {
-            if (col.gameObject.TryGetComponent(out Sphere.Sphere sphere))
-            {
-                
-            }
+            if (!col.gameObject.TryGetComponent(out MovingSphere sphere)) return;
+            
+            if(sphere.SphereType == SphereType.ScoreSphere) 
+                ScoreController.SetNewScore.Invoke();
         }
     }
 }
