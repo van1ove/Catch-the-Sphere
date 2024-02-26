@@ -1,4 +1,6 @@
-﻿using Score;
+﻿using Managers;
+using Score;
+using Spawner;
 using UnityEngine;
 using Sphere;
 
@@ -10,9 +12,19 @@ namespace Wheel
         private void OnTriggerEnter2D(Collider2D col)
         {
             if (!col.gameObject.TryGetComponent(out MovingSphere sphere)) return;
-            
-            if(sphere.SphereType == SphereType.ScoreSphere) 
-                ScoreController.SetNewScore.Invoke();
+
+            if (sphere.Type == SphereType.ScoreSphere)
+            {
+                ScoreController.SetNewScore?.Invoke();
+                Destroy(sphere.gameObject);
+            }
+                
+            else
+            {
+                SpheresSpawner.StopSpawning();
+                TimeManager.PauseTime();
+            }
+                
         }
     }
 }

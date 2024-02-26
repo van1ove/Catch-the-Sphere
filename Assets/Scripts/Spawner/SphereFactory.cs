@@ -27,7 +27,7 @@ namespace Spawner
             {
                 foreach (MovingSphere sp in _spheres)
                 {
-                    _spheresDictionary.Add(sp.SphereType, sp);
+                    _spheresDictionary.Add(sp.Type, sp);
                 }
             }
             catch (ArgumentException e)
