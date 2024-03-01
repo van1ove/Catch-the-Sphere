@@ -490,7 +490,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 519420031}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -1202,7 +1202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 392568367}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpawnPoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1672,7 +1672,7 @@ GameObject:
   - component: {fileID: 567279541}
   - component: {fileID: 567279540}
   - component: {fileID: 567279542}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spining Wheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2092,7 +2092,7 @@ GameObject:
   - component: {fileID: 1210129043}
   - component: {fileID: 1210129042}
   - component: {fileID: 1210129044}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Second Detection Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2747,7 +2747,7 @@ GameObject:
   - component: {fileID: 1555172450}
   - component: {fileID: 1555172451}
   - component: {fileID: 1555172452}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spawn Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2852,7 +2852,7 @@ GameObject:
   - component: {fileID: 1618054671}
   - component: {fileID: 1618054670}
   - component: {fileID: 1618054672}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: First Detection Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3628,7 +3628,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1886591177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottomLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3793,7 +3793,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1953456940}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4075,8 +4075,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
+  - {fileID: 567279541}
   - {fileID: 74172315}
   - {fileID: 1767831265}
-  - {fileID: 567279541}
   - {fileID: 1470663013}
   - {fileID: 689800871}

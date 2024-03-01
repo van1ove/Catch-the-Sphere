@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 303890127303277760}
   - component: {fileID: 3042316591576643755}
   - component: {fileID: 1021983081744524235}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: ScoreSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   moveDelay: 0.2
   moveSpeed: 2.5
   <Type>k__BackingField: 0
+  rb: {fileID: 1021983081744524235}
 --- !u!58 &3042316591576643755
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 434264237699643017}
   - component: {fileID: 354167522301930955}
   - component: {fileID: 2159229243625994439}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: DeadSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,6 +103,7 @@ MonoBehaviour:
   moveDelay: 0.2
   moveSpeed: 2.5
   <Type>k__BackingField: 1
+  rb: {fileID: 2159229243625994439}
 --- !u!58 &354167522301930955
 CircleCollider2D:
   m_ObjectHideFlags: 0
