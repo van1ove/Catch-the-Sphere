@@ -100,7 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyDelay: 4
-  moveSpeed: 4
+  moveDelay: 0.2
+  moveSpeed: 2.5
   <Type>k__BackingField: 1
 --- !u!58 &354167522301930955
 CircleCollider2D:

@@ -2,10 +2,10 @@
 
 namespace Managers
 {
-    public class TimeManager
+    public class TimeManager : MonoBehaviour
     {
-        public static void PauseTime() => Time.timeScale = 0f;
+        public void PauseTime() => Time.timeScale = 0f;
         
-        public static void ContinueTime() => Time.timeScale = 1f;
+        public void ContinueTime() => Time.timeScale = 1f;
     }
 }

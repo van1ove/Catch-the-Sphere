@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Sphere;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = System.Random;
 
 namespace Spawner
@@ -10,6 +11,7 @@ namespace Spawner
     {
         #region Variables
 
+        [SerializeField, Range(1, 100)] private int scoreSpherePercent;
         [SerializeField] private int spawnDelay;
         [SerializeField] private List<MovingSphere> spheres;
 
@@ -47,7 +49,8 @@ namespace Spawner
                 yield return new WaitForSeconds(spawnDelay);
             
                 int numb = _random.Next(0, 100);
-                MovingSphere sphere = numb <= 80 ? _sphereFactory.CreateScoreSphere() : _sphereFactory.CreateDeadSphere();
+                MovingSphere sphere = numb <= scoreSpherePercent 
+                    ? _sphereFactory.CreateScoreSphere() : _sphereFactory.CreateDeadSphere();
                 
                 sphere = Instantiate(sphere, transform.position, Quaternion.identity);
                 sphere.SetUpSphere(CreateDirectionVector());
@@ -66,9 +69,9 @@ namespace Spawner
             return direction;
         }
         
-        public static void StopSpawning() => _keepSpawning = false;
+        public void StopSpawning() => _keepSpawning = false;
 
-        private static void StartSpawning() => _keepSpawning = true;
+        private void StartSpawning() => _keepSpawning = true;
         #endregion
     }
 }
