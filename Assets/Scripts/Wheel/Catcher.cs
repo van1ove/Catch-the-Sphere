@@ -1,6 +1,4 @@
 ﻿using Managers;
-using Score;
-using Spawner;
 using UnityEngine;
 using Sphere;
 
@@ -15,14 +13,13 @@ namespace Wheel
 
             if (sphere.Type == SphereType.ScoreSphere)
             {
-                ScoreController.SetNewScore?.Invoke();
+                EventManager.Instance.InvokeIncreaseScore();
                 Destroy(sphere.gameObject);
             }
                 
             else
             {
-                SpheresSpawner.StopSpawning();
-                TimeManager.PauseTime();
+                EventManager.Instance.InvokeEndGame();
             }
                 
         }

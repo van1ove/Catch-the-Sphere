@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Sphere;
+using UnityEngine;
 
 namespace Spawner
 {
@@ -32,7 +33,7 @@ namespace Spawner
             }
             catch (ArgumentException e)
             {
-                Console.WriteLine(e);
+                Debug.LogError(e);
             }
         }
 

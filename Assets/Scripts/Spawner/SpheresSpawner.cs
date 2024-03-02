@@ -10,7 +10,8 @@ namespace Spawner
     {
         #region Variables
 
-        [SerializeField] private int spawnDelay;
+        [SerializeField, Range(1, 100)] private int scoreSpherePercent;
+        [SerializeField, Min(1)] private int spawnDelay;
         [SerializeField] private List<MovingSphere> spheres;
 
         private SphereFactory _sphereFactory;
@@ -32,9 +33,6 @@ namespace Spawner
         {
             _sphereFactory = new SphereFactory(spheres);
             _random = new Random();
-            
-            StartSpawning();
-            StartCoroutine(SpawnSphere());
         }
 
         #endregion
@@ -47,7 +45,8 @@ namespace Spawner
                 yield return new WaitForSeconds(spawnDelay);
             
                 int numb = _random.Next(0, 100);
-                MovingSphere sphere = numb <= 80 ? _sphereFactory.CreateScoreSphere() : _sphereFactory.CreateDeadSphere();
+                MovingSphere sphere = numb <= scoreSpherePercent 
+                    ? _sphereFactory.CreateScoreSphere() : _sphereFactory.CreateDeadSphere();
                 
                 sphere = Instantiate(sphere, transform.position, Quaternion.identity);
                 sphere.SetUpSphere(CreateDirectionVector());
@@ -66,9 +65,13 @@ namespace Spawner
             return direction;
         }
         
-        public static void StopSpawning() => _keepSpawning = false;
+        public void StopSpawning() => _keepSpawning = false;
 
-        private static void StartSpawning() => _keepSpawning = true;
+        public void StartSpawning()
+        {
+            _keepSpawning = true;
+            StartCoroutine(SpawnSphere());
+        }
         #endregion
     }
 }
