@@ -15,17 +15,12 @@ namespace Wheel
         
         #region MonoBehaviorMethods
 
-        private void Start()
-        {
-            EnableInput();
-        }
-
         private void Update()
         {
+            if (!_inputEnable) return;
+            
             transform.Rotate(_axis * Time.deltaTime * spinSpeed);
             
-            if (!_inputEnable) return;
-
             if(EventSystem.current.currentSelectedGameObject &&
                 EventSystem.current.currentSelectedGameObject.layer == LayerMask.NameToLayer("UI")) return;
 

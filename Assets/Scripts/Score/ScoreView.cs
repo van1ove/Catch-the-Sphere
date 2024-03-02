@@ -8,5 +8,7 @@ namespace Score
         [SerializeField] private TextMeshProUGUI scoreTMP;
 
         public void UpdateScore(int newScore) => scoreTMP.text = $"{newScore}";
+
+        private void OnValidate() => scoreTMP.text = "0";
     }
 }

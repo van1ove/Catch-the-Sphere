@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using Sphere;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = System.Random;
 
 namespace Spawner
@@ -12,7 +11,7 @@ namespace Spawner
         #region Variables
 
         [SerializeField, Range(1, 100)] private int scoreSpherePercent;
-        [SerializeField] private int spawnDelay;
+        [SerializeField, Min(1)] private int spawnDelay;
         [SerializeField] private List<MovingSphere> spheres;
 
         private SphereFactory _sphereFactory;
@@ -34,9 +33,6 @@ namespace Spawner
         {
             _sphereFactory = new SphereFactory(spheres);
             _random = new Random();
-            
-            StartSpawning();
-            StartCoroutine(SpawnSphere());
         }
 
         #endregion
@@ -71,7 +67,11 @@ namespace Spawner
         
         public void StopSpawning() => _keepSpawning = false;
 
-        private void StartSpawning() => _keepSpawning = true;
+        public void StartSpawning()
+        {
+            _keepSpawning = true;
+            StartCoroutine(SpawnSphere());
+        }
         #endregion
     }
 }
